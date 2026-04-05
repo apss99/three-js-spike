@@ -1,4 +1,6 @@
 import * as THREE from "three";
+// import { TextGeometry } from "three/addons/loaders/TextGeometry.js";
+// import { FontLoader } from "three/addons/loaders/FontLoader.js";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -10,6 +12,8 @@ const camera = new THREE.PerspectiveCamera(
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
+
+// new THREE.TextGeometry(text, parameters);
 
 document.body.appendChild(renderer.domElement);
 

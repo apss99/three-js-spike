@@ -14,9 +14,9 @@ const textGeometry = new TextGeometry("Rotating text", {
 });
 
 const textMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-const tumblrText = new THREE.Mesh(textGeometry, textMaterial);
+const rotatingText = new THREE.Mesh(textGeometry, textMaterial);
 
-tumblrText.position.x = -4;
-tumblrText.position.y = 2;
+rotatingText.position.x = -4;
+rotatingText.position.y = 2;
 
-export default tumblrText;
+export default rotatingText;

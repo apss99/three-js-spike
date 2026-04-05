@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import tumblrText from "./tumblrText";
+import tumblrText from "./rotatingText";
 import greenCube from "./greenCube";
-import animateTumblrText from "./animateTumblrText";
 import animateCube from "./animateCube";
+import animateRotatingText from "./animateRotatingText";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -27,7 +27,7 @@ function animate(time = 0) {
   requestAnimationFrame(animate);
 
   animateCube(time);
-  animateTumblrText(time);
+  animateRotatingText(time);
 
   renderer.render(scene, camera);
 }

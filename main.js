@@ -1,6 +1,8 @@
 import * as THREE from "three";
-// import { TextGeometry } from "three/addons/loaders/TextGeometry.js";
-// import { FontLoader } from "three/addons/loaders/FontLoader.js";
+import tumblrText from "./tumblrText";
+import greenCube from "./greenCube";
+import animateTumblrText from "./animateTumblrText";
+import animateCube from "./animateCube";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -13,23 +15,21 @@ const camera = new THREE.PerspectiveCamera(
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-// new THREE.TextGeometry(text, parameters);
-
 document.body.appendChild(renderer.domElement);
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+scene.add(greenCube);
 
 camera.position.z = 5;
 
-function animate(time) {
+scene.add(tumblrText);
+
+function animate(time = 0) {
   requestAnimationFrame(animate);
 
-  cube.rotation.x = time / 2000;
-  cube.rotation.y = time / 1000;
+  animateCube(time);
+  animateTumblrText(time);
 
   renderer.render(scene, camera);
 }
+
 animate();

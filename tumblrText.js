@@ -6,7 +6,7 @@ const loader = new FontLoader();
 const font = await loader.loadAsync(
   "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
 );
-const textGeometry = new TextGeometry("Tumblr <3", {
+const textGeometry = new TextGeometry("Rotating text", {
   font: font,
   size: 1,
   depth: 0.2,
